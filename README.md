@@ -7,31 +7,20 @@ Killing a certain process using a specific port (windows users)
 
 ## step 2
 
-* Search for the prcess which is using the port you want to clean.
+* import the file killProcessByPid.ps1
 
 ```bash
-netstat -ano | findstr :PORT
+Import-module .\killProcessByPid.ps1 -Force
 ```
-
-Replace PORT with the used port you want to clean
-
-* Example : 
-![alt text](https://github.com/ibrahim-mestadi/kill-process.PID-/blob/main/images/tst.png)
-
-*The number 36416 is the PID of the process using the PORT= 8080*
-
 ## Step 3
 
-* Kill it :)
+* Enjoy by killing any process using the function killByPort:
 
 ```bash
-TASKKILL /PID 36416 /F
+killByPort $Port
 ```
-![alt text](https://github.com/ibrahim-mestadi/kill-process.PID-/blob/main/images/pst.png)
-
-## Step 4
-
-No step 4 we already kill it : if you want to check re-use the port from an other service or repast the first filtring command :)   
-
-
-
+### Example:
+```bash
+Import-module .\killProcessByPid.ps1 -Force
+killByPort 3000
+```
